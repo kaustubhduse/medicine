@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 import SlidingBar from "./SlidingBar";
 import LeftOption from "./LeftOption";
 
 function LeftSide() {
+  // State to manage the slider values
+
   return (
-    <div className="md:w-[20%] w-[40%] mt-[7%] h-[calc(100vh-5rem)] overflow-y-auto scrollbar-hidden">
+    <div className="md:w-[20%] w-[40%] mt-[7%]">
       <div className="flex space-x-4">
         <Image
           width={25}
@@ -18,7 +22,7 @@ function LeftSide() {
       </div>
 
       {/* Left bar */}
-      <div className="items-center justify-center">
+      <div className="items-center justify-center ">
         <div></div>
         <div className="mt-[20%] text-center bg-[rgba(98,195,198,0.1)] mb-[20%]">
           <h1 className="font-semibold text-xl">Filter</h1>
@@ -32,32 +36,86 @@ function LeftSide() {
             Hersteller
           </h1>
           <div className="mt-[12%] flex flex-col space-y-3">
-            {["ADREXpharma", "Aurora", "Avaay", "Bedrocan", "Cannamedical"].map((brand) => (
-              <div key={brand}>
-                <input
-                  type="checkbox"
-                  id={brand}
-                  name={brand}
-                  value={brand}
-                  className="h-4 w-4 border border-[rgba(98,195,198,1)]"
-                />
-                <label htmlFor={brand} className="ml-2">
-                  {brand}
-                </label>
-              </div>
-            ))}
             <div>
-              <h1 className="border-2 border-[rgba(236,254,170,1)] rounded-tl-[24px] rounded-br-[24px] py-[2%] px-[20%] cursor-pointer hover:bg-[rgba(236,254,170,0.2)] transition-colors">
-                mehr anzeigen
-              </h1>
+              <input
+                type="checkbox"
+                id="ADREXpharma"
+                name="ADREXpharma"
+                value="ADREXpharma"
+                className="h-4 w-4 border border-[rgba(98,195,198,1)]"
+              />
+              <label htmlFor="ADREXpharma" className="ml-2">
+                ADREXpharma
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                id="Aurora"
+                name="Aurora"
+                value="Aurora"
+                className="h-4 w-4"
+              />
+              <label htmlFor="Aurora" className="ml-2 ">
+                Aurora
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                id="Avaay"
+                name="Avaay"
+                value="Avaay"
+                className="h-4 w-4"
+              />
+              <label htmlFor="Avaay" className="ml-2">
+                Avaay
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                id="Bedrocan"
+                name="Bedrocan"
+                value="Bedrocan"
+                className="h-4 w-4"
+              />
+              <label htmlFor="Bedrocan" className="ml-2">
+                Bedrocan
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                id="Cannamedical"
+                name="Cannamedical"
+                value="Cannamedical"
+                className="w-4 h-4 border-[rgba(98,195,198,1)]"
+              />
+              <label htmlFor="Cannamedical" className="ml-2">
+                Cannamedical
+              </label>
+            </div>
+            <div>
+              <div>
+                <h1 className=" border-2 border-[rgba(236,254,170,1)] rounded-tl-[24px] rounded-br-[24px] py-[2%] px-[20%]">
+                  mehr anzeigen
+                </h1>
+              </div>
             </div>
           </div>
         </div>
 
         <SlidingBar title="THC Gehalt" />
+
         <SlidingBar title="CBD Gehalt" />
 
         <LeftOption />
+
       </div>
     </div>
   );

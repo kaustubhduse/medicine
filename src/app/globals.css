@@ -29,14 +29,5 @@
     animation: blink 1s infinite;
   }
 
-  /* Hide scrollbar for all browsers except Edge and IE */
-.scrollbar-hidden {
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Opera) */
-  .scrollbar-hidden::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
-  
+
   
