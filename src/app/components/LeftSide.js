@@ -9,7 +9,7 @@ function LeftSide() {
   // State to manage the slider values
 
   return (
-    <div className="md:w-[20%] w-[40%] mt-[7%]">
+    <div className="md:w-[20%] w-[40%]">
       <div className="flex space-x-4">
         <Image
           width={25}

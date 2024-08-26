@@ -12,7 +12,7 @@ function Page() {
     <div className="min-h-screen flex flex-col">
       <div className="p-5 md:p-10 flex-1">
         <Navbar />
-        <div className=" md:justify-between md:flex mt-[5%]">
+        <div className=" md:justify-between md:flex mt-[3%]">
           <div className="flex items-center space-x-2 ">
             <h1 className="text-[rgba(98,195,198,1)]">Home</h1>
             <Image
@@ -43,7 +43,7 @@ function Page() {
           </div>
         </div>
 
-        <div className="flex mt-[0%]">
+        <div className="flex md:mt-[3%] mt-[7%]">
           <LeftSide />
           <div className="ml-5"></div>
           <RightSide />

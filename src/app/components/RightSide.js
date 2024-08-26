@@ -4,7 +4,7 @@ import Card from "./UI/Card";
 
 function RightSide() {
   return (
-    <div className="mt-[7%] w-[100%]">
+    <div className=" w-[100%]">
       <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-[3%]">
         <div className="flex items-center w-full md:w-auto">
           <input
