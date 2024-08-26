@@ -1,19 +1,48 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-function Card({ status,thc, list, title, subtitle }) {
+function Card({ status, thc, list, title, subtitle }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef(null);
 
-    const isRed = status === "red";
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 } // Adjust this value based on when you want the effect to trigger
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  const isRed = status === "red";
 
   return (
-    <div className="w-fit md:w-auto mt-[8%] rounded-tl-[30px] rounded-tr-[0px] rounded-bl-[0px] rounded-br-[30px] border-2 border-[rgba(40,227,233,1)]">
+    <div
+      ref={cardRef}
+      className={`w-fit md:w-auto mt-[8%] rounded-tl-[30px] rounded-tr-[0px] rounded-bl-[0px] rounded-br-[30px] border-2 border-[rgba(40,227,233,1)] card ${isVisible ? 'visible' : ''} transform transition-transform duration-500 hover:scale-105` }
+    >
       <div>
       <div className={`w-fit ml-[7%] mt-[5%] px-2 py-1 rounded-2xl flex items-center ${isRed ? 'bg-[rgba(161,12,12,0.05)]' : 'bg-[rgba(13,112,82,0.05)]'}`}>
-          <span className={`w-2 h-2 rounded-full mr-2 ${isRed ? 'bg-red-600' : 'bg-[rgba(13,112,82,1)]'}`}></span>
-          <p className={`text-md ${isRed ? 'text-[rgba(161,12,12,1)]' : 'text-[rgba(13,112,82,1)]'}`}>
-            {isRed ? "nicht lieferbar" : "sofort lieferbar"}
-          </p>
-        </div>
+      <span
+        className={`w-2 h-2 rounded-full mr-2 ${isRed ? 'bg-red-600' : 'bg-green-600'} blinking`}
+      ></span>
+      <p className={`text-md ${isRed ? 'text-[rgba(161,12,12,1)]' : 'text-[rgba(13,112,82,1)]'}`}>
+        {isRed ? "nicht lieferbar" : "sofort lieferbar"}
+      </p>
+    </div>
         <Image
           width={400}
           height={100}

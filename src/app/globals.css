@@ -2,3 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add to your global stylesheet or a CSS module */
+.card {
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(30%); /* Starts 50px below the original position */
+  }
+  
+  .card.visible {
+    transform: translateY(0); /* Moves to original position */
+  }
+  
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinking {
+    animation: blink 1s infinite;
+  }
+  

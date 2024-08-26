@@ -57,9 +57,9 @@ function Navbar() {
               height={25}
               src="/assets/darkleaf.png"
               alt="Rezept einlösen"
-              className="w-6 "
+              className="w-6 cursor-pointer"
             />
-            <h1 className="ml-2 text-sm font-bold">Rezept einlösen</h1>
+            <h1 className="ml-2 text-sm font-bold cursor-pointer">Rezept einlösen</h1>
           </div>
 
           <div className="flex items-center">
@@ -68,9 +68,9 @@ function Navbar() {
               height={25}
               src="/assets/lightleaf.png"
               alt="Live Bestand"
-              className="w-6 h-auto"
+              className="w-6 h-auto cursor-pointer"
             />
-            <h1 className="ml-2 text-sm">Live Bestand</h1>
+            <h1 className="ml-2 text-sm cursor-pointer">Live Bestand</h1>
           </div>
 
           <div className="flex items-center">
@@ -79,9 +79,9 @@ function Navbar() {
               height={25}
               src="/assets/lightleaf.png"
               alt="Videosprechstunde"
-              className="w-6 h-auto"
+              className="w-6 h-auto cursor-pointer"
             />
-            <h1 className="ml-2 text-sm">Videosprechstunde</h1>
+            <h1 className="ml-2 text-sm cursor-pointer">Videosprechstunde</h1>
           </div>
 
           <div className="flex items-center">
@@ -90,9 +90,9 @@ function Navbar() {
               height={25}
               src="/assets/lightleaf.png"
               alt="FAQs"
-              className="w-6 h-auto"
+              className="w-6 h-auto cursor-pointer"
             />
-            <h1 className="ml-2 text-sm">FAQs</h1>
+            <h1 className="ml-2 text-sm cursor-pointer">FAQs</h1>
           </div>
 
           <div className="flex items-center">
@@ -101,9 +101,9 @@ function Navbar() {
               height={25}
               src="/assets/lightleaf.png"
               alt="Kontakt"
-              className="w-6 h-auto"
+              className="w-6 h-auto cursor-pointer"
             />
-            <h1 className="ml-2 text-sm">Kontakt</h1>
+            <h1 className="ml-2 text-sm cursor-pointer">Kontakt</h1>
           </div>
         </div>
 
